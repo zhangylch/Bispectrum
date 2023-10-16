@@ -9,7 +9,7 @@ ___________________________________
 **Examples:**
 ____________________________________________________________
 Here (test.py in "codes") is a sample program that shows how to convert from Cartesian coordinates to bispectrum. 
-'''
+```python
 import numpy as np
 import jax
 import flax 
