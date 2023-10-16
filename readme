@@ -1,4 +1,15 @@
-import sys
+Bispectrum
+=================================================
+**Introduction:**
+___________________________
+This repo aims to implement Bispectrum (Four-body descriptors) based on the spherical harmonic expansion using jax framework. 
+**Requirements:**
+___________________________________
+* jax+flax
+**Examples:**
+____________________________________________________________
+Here (test.py in "codes") is a sample program that shows how to convert from Cartesian coordinates to bispectrum. 
+'''
 import numpy as np
 import jax
 import flax 
@@ -31,20 +42,10 @@ getneigh.deallocate_all()
 cart=jnp.array(cart)
 #jax.config.update("jax_debug_nans", True)
 
-J_seq=[[2,3,3],[2,3,5]]
+J_seq=[[2,3,3],[2,3,5]]    # define the j1/j2/j3 used for contracting the sph.
 model=Bispectrum.Bispectrum(emb_nl,J_seq,nwave=nwave,max_l=max_l,cutoff=cutoff,Dtype=dtype)
 params=model.init(key,cart,atomindex,shifts,species)
 model=model.apply
 energy=model(params,cart,atomindex,shifts,species)
 print(energy)
-rotate=jnp.zeros((3,3),dtype=dtype)
-ceta=np.pi/4
-rotate=rotate.at[2,2].set(1.0)
-rotate=rotate.at[1,1].set(jnp.cos(ceta))
-rotate=rotate.at[0,0].set(jnp.cos(ceta))
-rotate=rotate.at[0,1].set(jnp.sin(ceta))
-rotate=rotate.at[1,0].set(-jnp.sin(ceta))
-cart=jnp.einsum("ij,jk->ik",rotate,cart)
-energy1=model(params,cart,atomindex,shifts,species)
-print(energy1)
-
+```
