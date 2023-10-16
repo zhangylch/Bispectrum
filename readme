@@ -1,15 +1,15 @@
-Bispectrum
-=================================================
-**Introduction:**
-___________________________
+# Bispectrum
+## Introduction
 This repo aims to implement Bispectrum (Four-body descriptors) based on the spherical harmonic expansion using jax framework. 
-**Requirements:**
-___________________________________
-* jax+flax
-**Examples:**
-____________________________________________________________
+
+## Requirements
+1. jax+flax
+2. [wigners] ()
+
+## Examples
 Here (test.py in "codes") is a sample program that shows how to convert from Cartesian coordinates to bispectrum. 
-```python
+
+```
 import numpy as np
 import jax
 import flax 
