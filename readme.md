@@ -4,7 +4,7 @@ This repo aims to implement Bispectrum (Four-body descriptors) based on the sphe
 
 ## Requirements
 1. jax+flax
-2. [wigners] (https://github.com/Luthaf/wigners)
+2. [wigners](https://github.com/Luthaf/wigners)
 
 ## Examples
 Here (test.py in "codes") is a sample program that shows how to convert from Cartesian coordinates to bispectrum. 
