@@ -1,0 +1,2 @@
+python3 -m numpy.f2py -m test -h test.pyf test.f90 --overwrite-signature
+python3 -m numpy.f2py --f90flags="-fopenmp" --opt="-O5" -m test -lmkl_rt -c test.pyf test.f90
